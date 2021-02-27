@@ -51,8 +51,12 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.lights-button{
+.lights-button_stop{
 	float: right;
+}
+
+.lights-button_takepic{
+  	float: right;
 }
 
 i.fa {
@@ -71,7 +75,15 @@ img {
     width: 35%
 }
 
-button {
+button_stop {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+button_takepic {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
@@ -144,9 +156,12 @@ body {
 
     <div class="ignoreCall">
           <a id=decline class="but_def">
-              <button id="button"> 
+              <button_stop id="button_stop"> 
                   <i style="background: red; color: white;" class="fa fa-times fa-2x" aria-hidden="true"></i>
-              </button>
+              </button_stop>
+              <button_takepic id="button_takepic"> 
+                  <i style="background: rgb(30, 255, 0); color: white;" class="fa fa-times fa-2x" aria-hidden="true"></i>
+              </button_stop>
          </a>       
     </div>
 
@@ -158,9 +173,9 @@ body {
 
 <script type="text/javascript">
   
-var button = document.getElementById('button');
+var button_stop = document.getElementById('button_stop');
 
-button.onclick = function() {
+button_stop.onclick = function() {
     var div = document.getElementById('newpost');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
@@ -169,7 +184,18 @@ button.onclick = function() {
         div.style.display = 'block';
     }
 };
-   
+
+var button_takepic = document.getElementById('button_takepic');
+
+button_takepic.onclick = function() {
+    var div = document.getElementById('newpost');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
 </script>
 
 </body>
